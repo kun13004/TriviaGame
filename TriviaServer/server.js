@@ -54,18 +54,13 @@ app.post('/postPlayerAnswer', function(req, res){
     })
     req.on('end', function(){
         postData = JSON.parse(postData);
-        console.log(postData);
-        console.log(postData.fk_quiz_history_id);
-       query.postPlayerAnswers(postData, function(error, results, fields){
-
-        console.log(results);
+        query.postPlayerAnswers(postData, function(error, results, fields){
             if(error !== undefined && error !== null) {
                 res.status(400).send();
             }else{
                 res.status(200).send();
             }
         })
-        res.status(200).send('worked');
     })
 })
 
