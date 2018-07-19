@@ -26,13 +26,3 @@ module.exports.parseProductData = function(data, callback){
     returnObject['products'] = products;
     return callback(returnObject);
 }
-
-/*
-RowDataPacket {
-    id: 1,
-    product_name: 'Auto',
-    product_link:
-     'https://www.usaa.com/inet/wc/auto_insurance_main?1&wa_ref=pub_global_products_ins_auto&akredirect=true',
-    fk_category_id: 1,
-    category_name: 'Insurance' }
-*/
