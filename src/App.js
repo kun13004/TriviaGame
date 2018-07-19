@@ -19,6 +19,16 @@ class App extends Component {
       }
   }
 
+  componentDidMount() {
+    axios.get(`http://localhost:3001/getProductsByCategory`)
+      .then(res => {
+          console.log('res':res)
+          console.log('res.categories':res.categories)
+        // const category = res.data.data.children.map(obj => obj.data);
+        // this.setState({ posts });
+      });
+  }
+
 //*************** API Call Functions *******************//
 
   getPlayer(){
