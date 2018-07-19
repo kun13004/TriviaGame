@@ -1,0 +1,21 @@
+.answers-container {
+    margin-top: 10px;
+    width: 40vw;
+    min-width: 200px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer-pill {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    padding:10px 0px;
+    background-color: #ccc;
+    margin:5px;
+    border-radius: 15px;
+}

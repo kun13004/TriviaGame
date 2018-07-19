@@ -1,0 +1,81 @@
+.landing-page-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.welcome-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    /* background-color: #fff; */
+}
+
+.welcome-title h1 {
+  color:#fff;
+  font-size: 3em;
+}
+
+.welcome-title h2 {
+  color:#E6E6E6;
+
+}
+
+.landing-action-buttons {
+    display:flex;
+    justify-content: space-around;
+    width: 50vw;
+    max-width: 400px;
+}
+
+.landing-action-buttons .btn{
+    width: 130px;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-learn-products {
+
+}
+
+#btn-start-quiz {
+
+}
+
+.quiz_helper ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding:30px 20px;
+    margin:0;
+    color:#bbb;
+
+}
+
+.quiz_helper li {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: circle;
+}
+
+.products-info-container {
+    display:flex;
+    background-color: #E6E6E6;
+    margin:0;
+    padding:15px 10%;
+    width: 100vw;
+}
+
+.product-list-container {
+    background-color: #F5F6F5;
+    padding:25px 40px;
+    width: 80vw;
+}

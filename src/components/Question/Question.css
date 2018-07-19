@@ -1,0 +1,30 @@
+.question-container {
+    margin-top: 15px;
+    max-width: 70vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image-holder {
+
+
+}
+
+.image-holder img {
+    max-width: 60vw;
+    max-height: 200px;
+}
+
+.question-text-container {
+    margin-top: 20px;
+    background-color: #ccc;
+    padding:20px 10px 10px 10px;
+    border-radius: 25px;
+}
+
+.question-text-container p{
+    font-size: 1.65em;
+}

@@ -1,30 +1,31 @@
-.App {
-  text-align: center;
-}
+/* colors
+USAA Navy #122A3F
+USAA Light Navy #2A4663
+USAA Gold #F9C62F
+USAA Light Gray #E6E6E6
+USAA Lighter Gray #F5F6F5
+USAA text Blue #127FAA
+USAA Green #87864a
+USAA darker Green #737443
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+ */
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.Game-space {
-    display: flex;
+.app-container {
+    display:flex;
     justify-content: center;
     align-items: center;
+    padding:0 20px;
+    margin: 0;
+    border:0;
+    background-color: #122A3F;
+    min-height: 100vh
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.content-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    min-height: 75vh;
+    background-color: #2A4663;
 }
