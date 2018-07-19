@@ -1,4 +1,14 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+///                                                                                         /// 
+///                                    Business Logic                                       ///
+///                                                                                         ///
+///////////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * Parse the data returned from the database into a formatted JSON object.
+ * @param {*} data 
+ * @param {*} callback 
+ */
 module.exports.parseProductData = function(data, callback){
     var categoryNames = {};
     var categories = [];

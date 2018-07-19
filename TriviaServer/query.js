@@ -1,3 +1,8 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+///                                                                                         /// 
+///                                     Query Methods                                       ///
+///                                                                                         ///
+///////////////////////////////////////////////////////////////////////////////////////////////
 const sql = require('mysql');
 
 const connectionInfo = {
@@ -9,6 +14,10 @@ const connectionInfo = {
 }
 var con = sql.createConnection(connectionInfo);
 
+/**
+ * Query the database for the questions for the next quiz. 
+ * @param {*} callback 
+ */
 module.exports.getQuestions = function(callback){
     con.query('SELECT * FROM Question WHERE Use_In_Next_Quiz = true;', function(error, results, fields){
         if(error !== undefined && error !== null){
@@ -18,6 +27,11 @@ module.exports.getQuestions = function(callback){
     })
 }
 
+/**
+ * Query the database for player information.
+ * @param {*} id 
+ * @param {*} callback 
+ */
 module.exports.getPlayerInfo = function(id, callback){
     con.query('SELECT * FROM Player WHERE Eagle_ID = ?',[id], function(error, results, fields){
         if(error !== undefined && error !== null){
@@ -27,6 +41,10 @@ module.exports.getPlayerInfo = function(id, callback){
     })
 }
 
+/**
+ * Query the database for products and categories.
+ * @param {*} callback 
+ */
 module.exports.getProductsByCategory = function(callback){
     con.query('SELECT * FROM Product join Category on Category.id = Product.fk_category_id;', 
     function(error, results, fields){
@@ -37,6 +55,11 @@ module.exports.getProductsByCategory = function(callback){
     })
 }
 
+/**
+ * Insert into the database the player's answer to a question.
+ * @param {*} obj 
+ * @param {*} callback 
+ */
 module.exports.postPlayerAnswers = function(obj, callback){
     var queryString = 'INSERT INTO Player_History (fk_quiz_history_id, fk_player_id, fk_player_answer_id) VALUES('+ 
     obj.fk_quiz_history_id +','+ obj.fk_player_id +','
