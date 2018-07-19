@@ -16,16 +16,23 @@ class App extends Component {
           view_page: 'landing_page', //landing_page, quiz_page, results_page
           quiz_questions: [],
           player:oPlayer,
+          categories: [],
+          products: [],
       }
   }
 
   componentDidMount() {
     axios.get(`http://localhost:3001/getProductsByCategory`)
       .then(res => {
-          console.log('res':res)
-          console.log('res.categories':res.categories)
+          console.log('res: ',res.data);
+          console.log('res.products: ',res.data['products']);
+          const categories = res.data['categories'];
+          const products = res.data['products'];
         // const category = res.data.data.children.map(obj => obj.data);
-        // this.setState({ posts });
+        this.setState({
+            categories: categories,
+            products: products,
+         });
       });
   }
 
