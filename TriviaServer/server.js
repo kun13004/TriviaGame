@@ -3,6 +3,9 @@ const app = expressPackage();
 
 var query = require('./query');
 var logic = require('./logic');
+var cors = require('cors');
+//Reference: https://stackoverflow.com/questions/7067966/how-to-allow-cors
+app.use(cors({'credentials':true, 'origins':true}));
 
 //GET METHODS
 app.get('/getQuestions', function(req, res){
