@@ -5,11 +5,7 @@ import ProductCategoryComponent from '../ProductCategory/ProductCategoryComponen
 class LandingPage extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            categories: ['cat1', 'cat2', 'cat3'],
 
-
-        }
     }
 
     startQuiz() {
@@ -52,7 +48,8 @@ class LandingPage extends Component {
                 </div>
                 <div id='products-info-container' className='products-info-container'>
                     <ProductCategoryComponent
-                    categories = {this.state.categories}/>
+                    categories = {this.props.categories}
+                    products = {this.props.products}/>
                 </div>
             </div>
         )

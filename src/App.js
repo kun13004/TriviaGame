@@ -74,7 +74,9 @@ class App extends Component {
           return(
               <div className='app-container'>
                   <LandingPage
-                    startQuiz={this.startQuiz.bind(this)}/>
+                    startQuiz={this.startQuiz.bind(this)}
+                    products = {this.state.products}
+                    categories={this.state.categories}/>
               </div>
           )
       }

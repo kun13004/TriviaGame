@@ -5,16 +5,23 @@ import './Product.css';
 class ProductComponent extends Component {
 
     render() {
-        // {this.props.listofproducts.map((s, i) => {
-
+        console.log('this.props.products: ', this.props.products)
         return(
-            <div>
-                <li>
-                    <a href='#'>
-                        product name
-                    </a>
-                </li>
-            </div>
+            <ul>
+                {
+                    this.props.products[this.props.pid].map((p, i) => {
+                        console.log('p: ', p);
+                        return(
+                            <li>
+                                <a href={p.product_link} target='_blank'>
+                                    {p.product_name}
+                                </a>
+                            </li>
+                        )
+                    })
+                }
+
+            </ul>
         )
         // })}
 
