@@ -1,0 +1,19 @@
+.t3-table {
+    margin-top: 25px;
+}
+
+.t3-table td{
+    border: solid 1px #444;
+    width: 100px;
+    height: 100px;
+}
+
+.t3-table tbody{
+    border:solid 3px #444
+}
+
+.t3-table tr {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
