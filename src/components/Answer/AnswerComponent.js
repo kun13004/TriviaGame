@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -29,7 +28,6 @@ class AnswerComponent extends Component {
     }
 
     render() {
-        const renderAnswers = _.debounce((term) => {this.renderAnswers(term) }, 500);
 
         if (!this.props.questions[this.props.questionNumber]) {
             return (<div></div>)
