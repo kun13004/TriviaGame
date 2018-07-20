@@ -19,3 +19,8 @@
     margin:5px;
     border-radius: 15px;
 }
+
+.loading-text{
+    margin-top: 50px;
+    font-size: 2em;
+}

@@ -61,6 +61,12 @@ class App extends Component {
     }
 
 
+  navigateHome(){
+      this.setState({
+          view_page:'landing_page'
+      })
+  }
+
 //*************** Render Function *******************//
 
   render() {
@@ -68,7 +74,8 @@ class App extends Component {
           return (
               <div className='app-container'>
                   <QuizPage
-                    questions={this.state.questions}/>
+                    questions={this.state.questions}
+                    navigateHome={this.navigateHome.bind(this)}/>
               </div>
           )
       } else if (this.state.view_page === 'results_page'){

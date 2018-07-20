@@ -13,18 +13,23 @@ class QuizPage extends Component {
         }
     }
     incrementQuestion() {
-        if (this.state.questionNumber <=4 ){
+        if (this.state.questionNumber <4 ){
             let q = this.state.questionNumber;
             this.setState({
                 questionNumber: q+1
             })
         } else {
-            //do something else
+            this.props.navigateHome()
         }
 
     }
 
     render() {
+        if (this.props.question===[]) {
+            return(
+                <div>Loading</div>
+            )
+        }
         return(
             <div className='quiz-container'>
                 <div className='clock'>00:10</div>
