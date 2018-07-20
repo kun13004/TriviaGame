@@ -10,9 +10,12 @@ class LandingPage extends Component {
     }
 
     scrollToProducts() {
-// TODO make scrolling smooth.
-        var element_to_scroll_to = document.getElementById('products-info-container');
-        element_to_scroll_to.scrollIntoView();
+
+        window.scroll({
+            top: window.innerHeight,
+            left: 0,
+            behavior: 'smooth'
+        })
     }
 
     render() {
