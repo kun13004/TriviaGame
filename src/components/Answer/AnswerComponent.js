@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './Answer.css';
 
@@ -6,20 +7,45 @@ class AnswerComponent extends Component {
     constructor(props){
         super(props);
         this.state = {
-            dumanswers : ['vanilla', 'chocolate', 'strawberry']
+            answers : []
         }
+
+
+
+    }
+
+    onAnswerClick() {
+        this.props.incrementQuestion();
+
     }
 
     render() {
+        var qid = this.props.questions[this.props.questionNumber].id
+
+        axios.get(`http://localhost:3001/getQuestionAnswers?questionId=${qid}`)
+          .then(res => {
+              const answers = res.data
+            this.setState({
+                answers: answers,
+             });
+          });
+
+
+        if (this.state.answers.length === 0) {
+            return(
+                <div>Loading...</div>
+            )
+        }
         return (
             <div className='answers-container'>
-            {this.state.dumanswers.map((ans, i) => {
+            {this.state.answers.map((ans, i) => {
                 return (
                     <div
-                    key = {i}
-                    className='answer-pill btn btn-default'>
-                    {ans}
-                </div>
+                        key = {i}
+                        className='answer-pill btn btn-default'
+                        onClick={()=>this.onAnswerClick()}>
+                            {ans.answer_text}
+                    </div>
             )
             })}
             </div>

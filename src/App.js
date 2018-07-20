@@ -14,7 +14,7 @@ class App extends Component {
       let oPlayer = this.getPlayer;
       this.state = {
           view_page: 'landing_page', //landing_page, quiz_page, results_page
-          quiz_questions: [],
+          questions: [],
           player:oPlayer,
           categories: [],
           products: [],
@@ -22,18 +22,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3001/getProductsByCategory`)
-      .then(res => {
-          console.log('res: ',res.data);
-          console.log('res.products: ',res.data['products']);
-          const categories = res.data['categories'];
-          const products = res.data['products'];
-        // const category = res.data.data.children.map(obj => obj.data);
-        this.setState({
-            categories: categories,
-            products: products,
-         });
-      });
+      axios.get(`http://localhost:3001/getProductsByCategory`)
+        .then(res => {
+            const categories = res.data['categories'];
+            const products = res.data['products'];
+          // const category = res.data.data.children.map(obj => obj.data);
+          this.setState({
+              categories: categories,
+              products: products,
+           });
+        });
+
+        axios.get(`http://localhost:3001/getQuestions`)
+          .then(res => {
+              const questions = res.data;
+            this.setState({
+                questions: questions,
+             });
+          });
   }
 
 //*************** API Call Functions *******************//
@@ -61,7 +67,8 @@ class App extends Component {
       if (this.state.view_page === 'quiz_page'){
           return (
               <div className='app-container'>
-                  <QuizPage/>
+                  <QuizPage
+                    questions={this.state.questions}/>
               </div>
           )
       } else if (this.state.view_page === 'results_page'){

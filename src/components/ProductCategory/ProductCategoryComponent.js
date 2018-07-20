@@ -6,7 +6,6 @@ import ProductComponent from '../Product/ProductComponent'
 class ProductCategoryComponent extends Component {
     render() {
         //some sort of loop
-        console.log('this.props.categories: ',this.props.categories)
         return(
             <div>
                 {this.props.categories.map((cat, i) => {

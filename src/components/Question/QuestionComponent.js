@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import './Question.css';
 
 class QuestionComponent extends Component {
+    constructor(props){
+        super(props);
+
+    }
 
     render() {
         return (
@@ -11,7 +15,7 @@ class QuestionComponent extends Component {
                     <img src='images/USAA.png'/>
                 </div>
                 <div className='question-text-container'>
-                    <p>Heres my question Heres my question Heres my questionHeres my questionHeres my question?</p>
+                    <p>{this.props.questions[this.props.questionNumber].question_text}</p>
                 </div>
             </div>
         )

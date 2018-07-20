@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
-///                                                                                         /// 
+///                                                                                         ///
 ///                                     Server                                              ///
 ///                                                                                         ///
-///////////////////////////////////////////////////////////////////////////////////////////////                                                                            
+///////////////////////////////////////////////////////////////////////////////////////////////
 const expressPackage = require("express");
 const app = expressPackage();
 
@@ -14,7 +14,7 @@ app.use(cors({'credentials':true, 'origins':true}));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ///                                     Get Methods                                         ///
-///////////////////////////////////////////////////////////////////////////////////////////////   
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * REST end point for getting the questions for the current quiz.
@@ -27,6 +27,25 @@ app.get('/getQuestions', function(req, res){
             res.status(200).send(results);
         }
     })
+})
+
+/**
+ * REST end point for getting the answers to a question.
+ */
+app.get('/getQuestionAnswers', function(req, res){
+    var questionID = (req.query.questionId)? req.query.questionId : null;
+
+    if(questionID !== null){
+        query.getAnswersById(questionID, function(error, results, fields){
+            if(error) {
+                res.status(400).send();
+            }else{
+                res.status(200).send(results);
+            }
+        })
+    } else{
+        res.status(400).send();
+    }
 })
 
 /**
@@ -60,12 +79,12 @@ app.get('/getPlayerInfo', function(req, res){
         })
     } else{
         res.status(400).send();
-    } 
+    }
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ///                                     Post Methods                                        ///
-/////////////////////////////////////////////////////////////////////////////////////////////// 
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * REST end point for posting the players answer to a question.

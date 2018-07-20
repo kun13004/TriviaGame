@@ -3,10 +3,7 @@ import './LandingPage.css'
 import ProductCategoryComponent from '../ProductCategory/ProductCategoryComponent'
 
 class LandingPage extends Component {
-    constructor(props){
-        super(props);
 
-    }
 
     startQuiz() {
         this.props.startQuiz()
